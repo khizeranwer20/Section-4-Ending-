@@ -1,0 +1,7 @@
+RewriteEngine On
+# Check if the request is for a file or directory that exists
+RewriteBase //Section-1-PHP/webpage/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# Rewrite the request to index.php, preserving query strings
+RewriteRule ^(.*)$ index.php [QSA,L]
